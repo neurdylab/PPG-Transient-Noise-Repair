@@ -1,4 +1,4 @@
-function [OUT_p,REGS] = preproc_physio(physio_fn,save_dir,TR,nframes)
+function [OUT_p,REGS] = preproc_physio(physio_fn,save_dir,TR,nframes,sample_rt)
 % Initial processing of physio data. Align with fMRI scan, extract
 % "resp" (input to retro/rvhr), and initial heart beat detection
 % (may need correcting later). Also write matlab-readable raw data
@@ -45,7 +45,7 @@ function [OUT_p,REGS] = preproc_physio(physio_fn,save_dir,TR,nframes)
 % ------------------------------------------ %
 % parameters 
 % ------------------------------------------ %
-fs_phys = 2000; % Hz physio sampling (NIAAA)
+fs_phys = sample_rt; % Hz physio sampling (NIAAA)
 
 % ------------------------------------------ %
 % read files from IDL (svd) format,

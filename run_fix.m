@@ -9,7 +9,7 @@
 % suffix.
 
 % Input directory of PPG waveforms here
-user_dir = ['...'];
+user_dir = '/Users/bohanjiang/Desktop/untitled folder 3';
 file_list = dir([user_dir, '/*.tsv']);
 
 if ~exist([user_dir, '/fixed'],'dir')
@@ -25,7 +25,7 @@ for i = 1:length(file_list)
     % file_name = extrt_file{1,1};
     
     % Preprocess the physio waveforms to prepare for the fix
-    preproc_physio(file_name, [file_list(i).folder, '/preprocessed'], 500, 700);
+    preproc_physio(file_name, [file_list(i).folder, '/preprocessed'], 500, 700, 2000);
     close all;
     clean_name = extractBefore(file_list(i).name, '.');
     mat_name = [clean_name, '_physOUT.mat'];
